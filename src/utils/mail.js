@@ -1,5 +1,5 @@
 import Mailgen from "mailgen";
-import nodemailer from "nodemailer/lib/mime-node";
+import nodemailer from "nodemailer";
 
 // const sendEmail = async (options) => {
 //   const mailGenerator = new Mailgen({
@@ -71,7 +71,7 @@ const sendEmail = async (options) => {
   };
 
   try {
-    await transporter.sendEmail(mail);
+    await transporter.sendMail(mail);
   } catch (error) {
     console.error(
       "Email Service Failed Silently. Make Sure That You Have Provided Your Mailtrap credentials in .env file",
