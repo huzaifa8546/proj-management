@@ -29,6 +29,14 @@ app.get("/", (req, res) => {
 
 app.use("/api/v1/healthcheck", healthCheckRouter);
 app.use("/api/v1/auth", authRouter);
+// Example central error handler
+// app.use((err, req, res, next) => {
+//   res.status(err.statusCode || 500).json({
+//     success: false,
+//     message: err.message || "Something went wrong",
+//     errors: err.errors || [],
+//   });
+// });
 
 
 
